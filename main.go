@@ -1,10 +1,10 @@
 package main
 
-type testSTruct struct {
+type testStruct struct {
 	id int8
 }
 
-func (t *testSTruct) GetId() int8 {
+func (t *testStruct) GetId() int8 {
 	return t.id
 }
 
@@ -12,23 +12,23 @@ type testInterface interface {
 	GetId() int8
 }
 
-func PerformAction(t *testSTruct) {
+func PerformAction(t *testStruct) {
 	t.id = 8
 }
 
 func PerformActionOnCastedInterfaceIf(t testInterface) {
-	if struc, ok := t.(*testSTruct); ok {
+	if struc, ok := t.(*testStruct); ok {
 		struc.id = 8
 	}
 }
 
 func PerformActionOnCastedInterfaceNoIf(t testInterface) {
-	t.(*testSTruct).id = 8
+	t.(*testStruct).id = 8
 }
 
 func PerformActionOnCastedInterfaceSwitch(t testInterface) {
 	switch struc := t.(type) {
-	case *testSTruct:
+	case *testStruct:
 		struc.id = 8
 	}
 }

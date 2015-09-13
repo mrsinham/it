@@ -4,7 +4,7 @@ import "testing"
 
 func BenchmarkPerformActionOnStruct(b *testing.B) {
 	b.ReportAllocs()
-	t := testSTruct{2}
+	t := testStruct{2}
 	for i := 0; i < b.N; i++ {
 		PerformAction(&t)
 	}
@@ -12,7 +12,7 @@ func BenchmarkPerformActionOnStruct(b *testing.B) {
 
 func BenchmarkPerformActionOnCastedInterfaceIf(b *testing.B) {
 	b.ReportAllocs()
-	t := testSTruct{2}
+	t := testStruct{2}
 	for i := 0; i < b.N; i++ {
 		PerformActionOnCastedInterfaceIf(&t)
 	}
@@ -20,7 +20,7 @@ func BenchmarkPerformActionOnCastedInterfaceIf(b *testing.B) {
 
 func BenchmarkPerformActionOnCastedInterfaceNoIf(b *testing.B) {
 	b.ReportAllocs()
-	t := testSTruct{2}
+	t := testStruct{2}
 	for i := 0; i < b.N; i++ {
 		PerformActionOnCastedInterfaceNoIf(&t)
 	}
@@ -28,7 +28,7 @@ func BenchmarkPerformActionOnCastedInterfaceNoIf(b *testing.B) {
 
 func BenchmarkPerformActionOnCastedInterfaceSwitch(b *testing.B) {
 	b.ReportAllocs()
-	t := testSTruct{2}
+	t := testStruct{2}
 	for i := 0; i < b.N; i++ {
 		PerformActionOnCastedInterfaceSwitch(&t)
 	}
