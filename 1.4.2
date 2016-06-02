@@ -2,7 +2,7 @@
 # and a workspace (GOPATH) configured at /go.
 FROM golang:1.4.2
 
-ENV GOMAXPROCS 1
+ENV GOMAXPROCS 8
 
 # Copy the local package files to the container's workspace.
 ADD . /go/src/github.com/mrsinham/it

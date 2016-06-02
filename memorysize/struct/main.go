@@ -10,15 +10,15 @@ const (
 )
 
 type testStruct struct {
-	id int8
+	id int32
 }
 
-func (t testStruct) GetId() int8 {
+func (t testStruct) GetId() int32 {
 	return t.id
 }
 
 type testInterface interface {
-	GetId() int8
+	GetId() int32
 }
 
 func main() {
@@ -35,6 +35,13 @@ func main() {
 }
 
 func PerformAddingStructureToSlice() {
+	var s []testStruct = make([]testStruct, 0, nbStructToAdd)
+	for i := 0; i < nbStructToAdd; i++ {
+		s = append(s, testStruct{2})
+	}
+}
+
+func PerformAddingIntToSlice() {
 	var s []testStruct = make([]testStruct, 0, nbStructToAdd)
 	for i := 0; i < nbStructToAdd; i++ {
 		s = append(s, testStruct{2})

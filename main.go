@@ -1,15 +1,15 @@
 package main
 
 type testStruct struct {
-	id int8
+	id int16
 }
 
-func (t *testStruct) GetId() int8 {
+func (t *testStruct) GetId() int16 {
 	return t.id
 }
 
 type testInterface interface {
-	GetId() int8
+	GetId() int16
 }
 
 func PerformAction(t *testStruct) {
